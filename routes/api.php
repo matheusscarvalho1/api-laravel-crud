@@ -9,11 +9,13 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // })->middleware('auth:sanctum');
 
-Route::get('/users', [UserController::class, 'index']);
-Route::get('/users/{user}', [UserController::class, 'show']);
+Route::apiResource('users', UserController::class);
 Route::apiResource('invoices', InvoiceController::class);
 /*
 OU
+    Route::get('/users', [UserController::class, 'index']);
+    Route::get('/users/{user}', [UserController::class, 'show']);
+
     Route::get('/invoices', [InvoiceController::class, 'index']);
     Route::get('/invoices/{invoice}', [InvoiceController::class, 'showInvoice']);
     Route::post('/invoices', [InvoiceController::class, 'store']);
